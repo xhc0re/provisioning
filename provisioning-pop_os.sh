@@ -8,7 +8,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 sudo apt-get install -y curl git exuberant-ctags software-properties-common gnupg \
-			kitty apt-transport-https zsh rust-all httpie
+			kitty apt-transport-https zsh rust-all rust-src httpie
 
 echo "configuring zsh"
 
