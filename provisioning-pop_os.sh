@@ -17,7 +17,8 @@ if [[ ! -f ~/.zshenv ]]; then
 fi
 
 if [[ ! $SHELL  == "/usr/bin/zsh" ]]; then                                                                                                
-  echo "changing default shell"                                                                                                             chsh -s /usr/bin/zsh 
+  echo "changing default shell"
+  chsh -s /usr/bin/zsh
 fi   
 
 echo "setting up kitty as default terminal"
@@ -90,9 +91,7 @@ if [[ ! -d ~/.config/nvim ]]; then
     git clone https://github.com/xhc0re/nvim ~/.config/nvim
 fi
 
-echo "cleaning up"
 
-rm -fr tokyonight.nvim
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -119,5 +118,8 @@ sdk install kotlin
 sdk install springboot
 sdk install taxi
 sdk install vertx
+
+echo "cleaning up"
+rm -fr tokyonight.nvim
 
 reboot
