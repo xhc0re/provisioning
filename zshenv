@@ -1,2 +1,2 @@
-path+=('/home/c0re/.local/bin', '/home/c0re/.cargo/bin')
+path+=('$HOME/.local/bin', '$HOME/.cargo/bin', '$HOME/go/bin')
 export PATH

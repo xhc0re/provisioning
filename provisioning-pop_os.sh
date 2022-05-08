@@ -9,7 +9,7 @@ sudo apt-get upgrade
 
 sudo apt-get install -y curl git exuberant-ctags software-properties-common gnupg \
 			kitty apt-transport-https zsh rust-all rust-src httpie htop \
-			cmatrix
+			cmatrix golang
 
 echo "configuring zsh"
 
@@ -55,8 +55,10 @@ gsettings set org.gnome.shell.extensions.pop-shell show-title false
 
 echo "installing vscodium"
 
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg
-echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
+if [[ ! -f /etc/apt/sources.list.d/vscodium.list ]]; then
+    wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg
+    echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
+fi
 
 sudo apt-get update
 sudo apt-get install -y codium
@@ -119,6 +121,8 @@ sdk install kotlin
 sdk install springboot
 sdk install taxi
 sdk install vertx
+
+go install github.com/rs/curlie@latest
 
 echo "cleaning up"
 rm -fr tokyonight.nvim
