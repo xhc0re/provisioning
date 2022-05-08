@@ -17,10 +17,10 @@ if [[ ! -f ~/.zshenv ]]; then
     cp zshenv ~/.zshenv
 fi
 
-if [[ ! $SHELL  == "/usr/bin/zsh" ]]; then                                                                                                
+if [[ ! $SHELL  == "/usr/bin/zsh" ]]; then
   echo "changing default shell"
   chsh -s /usr/bin/zsh
-fi   
+fi
 
 echo "setting up kitty as default terminal"
 
@@ -71,12 +71,12 @@ if [[ ! -d ~/.local/bin ]]; then
     mkdir -p ~/.local/bin
 fi
 
-URL=$(http --headers https://github.com/rust-lang/rust-analyzer/releases/latest | grep Location | awk -F ' ' '{print $2}')        
+URL=$(http --headers https://github.com/rust-lang/rust-analyzer/releases/latest | grep Location | awk -F ' ' '{print $2}')
 FIXED_URL=$(echo $URL | sed 's/\r//' | sed 's/tag/download/g')
 curl -L -o rust-analyzer-x86_64-unknown-linux-gnu.gz "${FIXED_URL}/rust-analyzer-x86_64-unknown-linux-gnu.gz"
-gzip -d rust-analyzer-x86_64-unknown-linux-gnu.gz                                                                                 
-mv -f rust-analyzer-x86_64-unknown-linux-gnu ~/.local/bin/rust-analyzer                                                              
-chmod +x ~/.local/bin/rust-analyzer                                                                                               
+gzip -d rust-analyzer-x86_64-unknown-linux-gnu.gz
+mv -f rust-analyzer-x86_64-unknown-linux-gnu ~/.local/bin/rust-analyzer
+chmod +x ~/.local/bin/rust-analyzer
 
 sudo curl -sL https://deb.nodesource.com/setup_14.x | bash -
 sudo apt-get install -y nodejs vim
