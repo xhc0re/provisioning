@@ -116,8 +116,31 @@ cp ./purple.jpg ~/Obrazy/wallpapers/
 
 sed -i 's/\/home\/demus\/Wallpaper\/004.png/\/home\/c0re\/Obrazy\/wallpapers\/purple.jpg/g' ~/.config/sway/config 
 
+echo 'configuring git'
+
+git config --global user.name "hc0re"
+git config --global user.email "hc0re@tuta.io"
+
+echo 'installing sdkman and sdks'
+
+if [[ ! -f ~/.sdkman/bin/sdkman-init.sh ]]; then
+    curl -s "https://get.sdkman.io" | bash
+fi
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk install java 17.0.3-zulu
+sdk install gradle
+sdk install gradleprofiler
+sdk install micronaut
+sdk install kotlin
+sdk install springboot
+sdk install taxi
+sdk install vertx
+
 echo 'cleaning up'
 
 rm -fr sway-dots
 chsh -s /usr/bin/zsh
 reboot
+
