@@ -1,10 +1,8 @@
 #!/bin/bash
 
-WORKDIR="${HOME}/provisioning"
-
-echo $WORKDIR
-
 echo 'installing dependencies, utilities and apps'
+yay
+
 yay -R --noconfirm swaylock
 yay -R --noconfirm sway
 yay -R --noconfirm swaybg
@@ -53,7 +51,7 @@ if [[ ! -d ~/.config/zathura ]]; then
     mkdir -p ~/.config/zathura
 fi
 
-cp $WORKDIR/sway-dots/zathura/* ~/.config/zathura/
+cp ./sway-dots/zathura/* ~/.config/zathura/
 
 echo 'configuring kitty'
 
@@ -61,7 +59,7 @@ if [[ ! -d ~/.config/kitty ]]; then
     mkdir -p ~/.config/kitty
 fi
 
-cp $WORKDIR/sway-dots/kitty/* ~/.config/kitty/
+cp ./sway-dots/kitty/* ~/.config/kitty/
 
 echo 'configuring wofi'
 
@@ -69,7 +67,7 @@ if [[ ! -d ~/.config/wofi ]]; then
     mkdir -p ~/.config/wofi
 fi
 
-cp $WORKDIR/sway-dots/wofi/* ~/.config/wofi/
+cp ./sway-dots/wofi/* ~/.config/wofi/
 
 echo 'configuring mako'
       
@@ -77,19 +75,19 @@ if [[ ! -d ~/.config/mako ]]; then
     mkdir -p ~/.config/mako
 fi
     
-cp $WORKDIR/sway-dots/mako/* ~/.config/mako/
+cp ./sway-dots/mako/* ~/.config/mako/
 
 echo 'configuring waybar'
 
 rm -fr ~/.config/waybar/*
 
-cp -r $WORKDIR/sway-dots/waybar/* ~/.config/waybar/
+cp -r ./sway-dots/waybar/* ~/.config/waybar/
 
 echo 'configuring sway'
 
 rm -fr ~/.config/sway/*
 
-cp -r $WORKDIR/sway-dots/sway/* ~/.config/sway/
+cp -r ./sway-dots/sway/* ~/.config/sway/
 
 echo 'configuring zsh'
 
@@ -107,7 +105,7 @@ fi
 echo 'configuring starship'
 
 if [[ ! -f ~/.config/starship.toml ]]; then
-    cp $WORKDIR/sway-dots/starship.toml ~/.config/
+    cp ./sway-dots/starship.toml ~/.config/
 fi
 
 echo 'setting wallpaper'
@@ -142,5 +140,5 @@ echo 'cleaning up'
 
 rm -fr sway-dots
 chsh -s /usr/bin/zsh
-reboot
+#reboot
 
