@@ -13,7 +13,7 @@ signal-desktop telegram-desktop swaylock-fancy-git swaylock-effects-git \
 dmenu waybar wofi grim slurp mako kitty neovim code usbutils coreutils \
 ripgrep exa bat tree fd starship zsh pfetch zathura lxappearance \
 papirus-icon-theme brightnessctl rustup httpie curlie nodejs zathura-pdf-mupdf \
-sway-borders-git ncmatrix
+sway-borders-git ncmatrix go nim
 
 echo 'configuring rust'
 
