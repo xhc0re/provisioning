@@ -14,7 +14,7 @@ sudo apt-get install -y curl git exuberant-ctags software-properties-common gnup
 echo "configuring zsh"
 
 if [[ ! -f ~/.zshenv ]]; then
-    cp zshenv ~/.zshenv
+    cp ./dots/zshenv ~/.zshenv
 fi
 
 if [[ ! $SHELL  == "/usr/bin/zsh" ]]; then
@@ -94,14 +94,12 @@ if [[ ! -d ~/.config/nvim ]]; then
     git clone https://github.com/xhc0re/nvim ~/.config/nvim
 fi
 
-
-
 if [[ ! -d ~/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-cp c0re.zsh-theme ~/.oh-my-zsh/themes/
-cat zshrc > ~/.zshrc
+cp ./zsh/c0re.zsh-theme ~/.oh-my-zsh/themes/
+cat ./dots/zshrc > ~/.zshrc
 
 if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

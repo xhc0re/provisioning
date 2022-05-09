@@ -91,8 +91,8 @@ cp -r ./sway-dots/sway/* ~/.config/sway/
 
 echo 'configuring zsh'
 
-cat zshrc > ~/.zshrc
-cat zshenv > ~/.zshenv
+cat ./dots/zshrc > ~/.zshrc
+cat ./dots/zshenv > ~/.zshenv
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -110,7 +110,7 @@ fi
 
 echo 'setting wallpaper'
 
-cp ./purple.jpg ~/Obrazy/wallpapers/
+cp ./images/purple.jpg ~/Obrazy/wallpapers/
 
 sed -i 's/\/home\/demus\/Wallpaper\/004.png/\/home\/c0re\/Obrazy\/wallpapers\/purple.jpg/g' ~/.config/sway/config 
 
@@ -140,5 +140,5 @@ echo 'cleaning up'
 
 rm -fr sway-dots
 chsh -s /usr/bin/zsh
-#reboot
+reboot
 
