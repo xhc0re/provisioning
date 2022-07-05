@@ -5,7 +5,7 @@ sudo eopkg up -d
 sudo eopkg upgrade
 
 sudo eopkg install -y vscode telegram signal-desktop httpie neovim wireguard-tools github-cli font-jetbrainsmono-ttf gnome-tweaks \
-	fish dconf-editor nvidia-glx-driver
+	fish dconf-editor geary nvidia-glx-driver
 
 echo 'installing rust-analyzer'
 
