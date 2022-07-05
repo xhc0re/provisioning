@@ -1,11 +1,17 @@
 #!/bin/bash 
 
+echo 'updating solus'
+
 sudo eopkg update-repo -f
 sudo eopkg up -d
 sudo eopkg upgrade
 
 sudo eopkg install -y vscode telegram signal-desktop httpie neovim wireguard-tools github-cli font-jetbrainsmono-ttf gnome-tweaks \
-	fish dconf-editor geary nvidia-glx-driver
+	fish dconf-editor geary xsel exa bat taskwarrior golang
+
+echo 'installing system.devel'
+
+sudo eopkg it -y -c system.devel
 
 echo 'installing rust-analyzer'
 
